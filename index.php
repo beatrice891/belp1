@@ -14,26 +14,30 @@ include_once 'dbconfig.php';
  <div id="content">
     <table align="center">
     <tr>
-    <th colspan="5"><a href="add_data.php">Add data here.</a></th>
+    <th colspan="7"><a href="add_data.php">Add data here.</a></th>
     </tr>
     <th>Titlu</th>
     <th>Poza</th>
     <th>Continut</th>
     <th>Sursa</th>
-    <th colspan="2">Operations</th>
-    </tr>
+    <th>Tari</th>
+    <th>Prioritate</th>
+    <th>Data</th>
+    
     <?php
- $sql_query = "SELECT * FROM BELp1.bel";
- $result_set=mysqli_query($con, $sql_query);
- while($row=mysqli_fetch_row($result_set))
+ $sql_query = "SELECT * FROM bel";
+ $result_set = mysqli_query($con, $sql_query);
+ while($row = mysqli_fetch_row($result_set))
  {
   ?>
         <tr>
         <td><?php echo $row[1]; ?></td>
         <td><?php echo $row[2]; ?></td>
         <td><?php echo $row[3]; ?></td>
-  <td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="b_edit.png" align="EDIT" /></a></td>
-        <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="b_drop.png" align="DELETE" /></a></td>
+        <td><?php echo $row[4]; ?></td>
+        <td><?php echo $row[5]; ?></td>
+        <td><?php echo $row[6]; ?></td>
+        <td><?php echo $row[7]; ?></td>
         </tr>
         <?php
  }

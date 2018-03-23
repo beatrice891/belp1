@@ -7,8 +7,8 @@ if(isset($_POST['btn-save']))
  $poza = $_POST['poza'];
  $continut = $_POST['continut'];
  $sursa = $_POST['sursa'];
- // $tari = $_POST['tari'];
- // $prioritate = $_POST['prioritate'];
+ $data = $_POST['data'];
+ 
  
 
  // sql query for inserting data into database
@@ -92,6 +92,9 @@ if(isset($_POST['btn-save']))
         <option value="prioritate_scazuta">Prioritate Scazuta</option>
       </select>
     </td>
+    </tr>
+    <tr>
+    <td><input type="date" name="data" placeholder="Data" required /></td>
     </tr>
     <tr>
     <td><button type="submit" name="btn-save"><strong>TRIMITE</strong></button></td>
