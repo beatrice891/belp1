@@ -7,9 +7,15 @@ if(isset($_POST['btn-save']))
  $poza = $_POST['poza'];
  $continut = $_POST['continut'];
  $sursa = $_POST['sursa'];
+<<<<<<< HEAD
  $data = $_POST['data'];
  
  
+=======
+ // $tari = $_POST['tari'];
+ // $prioritate = $_POST['prioritate'];
+ iyhjiyh
+>>>>>>> parent of 0a7d23b... Revert "tesst"
 
  // sql query for inserting data into database
  $sql_query = "INSERT INTO bel(titlu,poza,continut,sursa) VALUES('$titlu','$poza','$continut', '$sursa')";
