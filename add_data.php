@@ -4,21 +4,18 @@ if(isset($_POST['btn-save']))
 {
  // variables for input data
  $titlu = $_POST['titlu'];
- $poza = $_POST['poza'];
+ // $poza = $_POST['poza'];
  $continut = $_POST['continut'];
  $sursa = $_POST['sursa'];
-<<<<<<< HEAD
+ $tari = $_POST['tari'];
+ $prioritate = $_POST['prioritate'];
  $data = $_POST['data'];
+ $data = str_to_date('$data', '%m/%d/%Y');
  
  
-=======
- // $tari = $_POST['tari'];
- // $prioritate = $_POST['prioritate'];
- iyhjiyh
->>>>>>> parent of 0a7d23b... Revert "tesst"
 
  // sql query for inserting data into database
- $sql_query = "INSERT INTO bel(titlu,poza,continut,sursa) VALUES('$titlu','$poza','$continut', '$sursa')";
+ $sql_query = "INSERT INTO bel(titlu,poza,continut,sursa,tari,prioritate,data) VALUES('$titlu','$poza','$continut', '$sursa','$tari','$prioritate','$data')";
 
  
  // sql query execution function
