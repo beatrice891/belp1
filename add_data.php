@@ -114,7 +114,6 @@ if(isset($_POST['btn-save']))
         <option value="Investigations">Investigations</option>
         <option value="Opinion">Opinion</option>
       </select>
-      //tipul de categorie de jurnalism
     </td>
     </tr>    
     <tr>
