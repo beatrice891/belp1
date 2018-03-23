@@ -82,9 +82,18 @@ if(isset($_POST['btn-save']))
     <tr>
     <td>
       <select name="tari">
-        <option value="Franta">Franta</option>
-        <option value="Italia">Italia</option>
-        <option value="Marea Britanie">Marea Britanie</option>
+        <option value="Albania">Albania</option>
+        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+        <option value="Bulgaria">Bulgaria</option>
+        <option value="Croatia">Croatia/option>
+        <option value="Hungary">Hungary</option>
+        <option value="Kosovo">Kosovo</option>        
+        <option value="Macedonia">Macedonia</option>
+        <option value="Moldova">Moldova</option>
+        <option value="Montenegro">Montenegro</option>
+        <option value="Romania">Romania</option>
+        <option value="Serbia">Serbia</option>
+        <option value="Ukraine">Ukraine</option>
       </select>
     </td>
     </tr>
