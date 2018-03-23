@@ -1,2 +1,2 @@
 # belp1
-bucharest-editors-labp1
+Bucharest Editors Lab - Project #1
