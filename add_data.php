@@ -11,6 +11,8 @@ if(isset($_POST['btn-save']))
  $prioritate = $_POST['prioritate'];
  $data = $_POST['data'];
  $data = str_to_date('$data', '%m/%d/%Y');
+ //mysql_query("INSERT INTO users (first, last, whenadded) VALUES ('$first', '$last', now())"; 
+
  
  
 
