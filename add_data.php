@@ -100,14 +100,23 @@ if(isset($_POST['btn-save']))
     <tr>
     <td>
       <select name="prioritate">
-        <option value="critic">Critic</option>
-        <option value="mediu">Mediu</option>
-        <option value="prioritate_medie">Prioritate Medie</option>
-        <option value="prioritate_scazuta">Prioritate Scazuta</option>
+        <option value="3">Critical</option>
+        <option value="2">Medium</option>
+        <option value="1">Low</option>
+        <option value="0">Info</option>
+      </select>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <select name="jurnalismcategory">
+        <option value="News">News</option>
+        <option value="Investigations">Investigations</option>
+        <option value="Opinion">Opinion</option>
       </select>
       //tipul de categorie de jurnalism
     </td>
-    </tr>
+    </tr>    
     <tr>
     <td><input type="date" name="data" placeholder="Data" required /></td>
     </tr>
