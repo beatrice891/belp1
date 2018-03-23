@@ -9,7 +9,7 @@ if(isset($_POST['btn-save']))
  $sursa = $_POST['sursa'];
  // $tari = $_POST['tari'];
  // $prioritate = $_POST['prioritate'];
- iyhjiyh
+ 
 
  // sql query for inserting data into database
  $sql_query = "INSERT INTO bel(titlu,poza,continut,sursa) VALUES('$titlu','$poza','$continut', '$sursa')";
