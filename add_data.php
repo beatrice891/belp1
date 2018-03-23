@@ -96,6 +96,7 @@ if(isset($_POST['btn-save']))
         <option value="prioritate_medie">Prioritate Medie</option>
         <option value="prioritate_scazuta">Prioritate Scazuta</option>
       </select>
+      //tipul de categorie de jurnalism
     </td>
     </tr>
     <tr>
