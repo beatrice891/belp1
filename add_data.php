@@ -5,76 +5,17 @@ if(isset($_POST['btn-save']))
 {
  // variables for input data
  $titlu = $_POST['titlu'];
- // $poza = $_POST['poza'];
+ $poza = $_POST['$db_file'];
  $continut = $_POST['continut'];
  $sursa = $_POST['sursa'];
  $tari = $_POST['tari'];
  $prioritate = $_POST['prioritate'];
  $data = $_POST['data'];
 
- //mysql_query("INSERT INTO users (first, last, whenadded) VALUES ('$first', '$last', now())"; 
- $sql_query = "INSERT INTO bel(titlu,poza,continut,sursa,tari,prioritate,data) VALUES('$titlu','$poza','$continut', '$sursa','$tari','$prioritate', now())";
-
- 
- // sql query execution function
- if(mysqli_query($con,$sql_query))
- {
-  ?>
-  <script type="text/javascript">
-  alert('Data Are Inserted Successfully ');
-  window.location.href='index.php';
-  </script>
-  <?php
- }
- else
- {
-  ?>
-  <script type="text/javascript">
-  alert('Eroare bre!! occured while inserting your data');
-  </script>
-  <?php
- }
- // sql query execution function
-}
-?>
-<!DOCTYPE html >
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Bel</title>
-<link rel="stylesheet" href="style.css" type="text/css" />
-</head>
-<body>
-<center>
-
-<div id="header">
- <div id="content">
-    <label></label>
-    </div>
-</div>
-<div id="body">
- <div id="content">
-    <form method="post" enctype="multipart/form-data">
-    <table align="center">
-    <tr>
-    <td align="center"><a href="index.php">Back to main page</a></td>
-    </tr>
-    <tr>
-    <td><input type="text" name="titlu" placeholder="Titlu" required /></td>
-    </tr>
-    <!-- <tr>
-    <td><input type="file" name="btn-upload"/></td>
-    </tr>
-    <tr>
-    <td><button type="submit" name="btn-upload" value="Upload Image"/><strong>SUBMIT</strong></td>
-    </tr> -->
-    <tr>
-    	<td>
-        Select image to upload:
-    	<input type="file" name="fileToUpload" id="fileToUpload">
-<?php
+//
 $target_dir = "/var/www/html/uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir . uniqid() . "-" . basename($_FILES["fileToUpload"]["name"]);
+$db_file = uniqid() . "-" . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -120,7 +61,68 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+
+//
+
+ $sql_query = "INSERT INTO bel(titlu,poza,continut,sursa,tari,prioritate,data) VALUES('$titlu','$poza','$continut', '$sursa','$tari','$prioritate', now())";
+
+ 
+ // sql query execution function
+ if(mysqli_query($con,$sql_query))
+ {
+  ?>
+  <script type="text/javascript">
+  alert('Data Are Inserted Successfully ');
+  window.location.href='index.php';
+  </script>
+  <?php
+ }
+ else
+ {
+  ?>
+  <script type="text/javascript">
+  alert('Eroare bre!! occured while inserting your data');
+  </script>
+  <?php
+ }
+}
 ?>
+
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bel</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<body>
+<center>
+
+<div id="header">
+ <div id="content">
+    <label></label>
+    </div>
+</div>
+<div id="body">
+ <div id="content">
+    <form method="post" enctype="multipart/form-data">
+    <table align="center">
+    <tr>
+    <td align="center"><a href="index.php">Back to main page</a></td>
+    </tr>
+    <tr>
+    <td><input type="text" name="titlu" placeholder="Titlu" required /></td>
+    </tr>
+    <!-- <tr>
+    <td><input type="file" name="btn-upload"/></td>
+    </tr>
+    <tr>
+    <td><button type="submit" name="btn-upload" value="Upload Image"/><strong>SUBMIT</strong></td>
+    </tr> -->
+    <tr>
+    	<td>
+        Select image to upload:
+    	<input type="file" name="fileToUpload" id="fileToUpload">
    		</td>
     </tr>
     <tr>
