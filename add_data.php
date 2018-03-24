@@ -13,7 +13,6 @@ if(isset($_POST['btn-save']))
  $data = $_POST['data'];
 
  //mysql_query("INSERT INTO users (first, last, whenadded) VALUES ('$first', '$last', now())"; 
- // sql query for inserting data into database
  $sql_query = "INSERT INTO bel(titlu,poza,continut,sursa,tari,prioritate,data) VALUES('$titlu','$poza','$continut', '$sursa','$tari','$prioritate', now())";
 
  
@@ -31,7 +30,7 @@ if(isset($_POST['btn-save']))
  {
   ?>
   <script type="text/javascript">
-  alert('error occured while inserting your data');
+  alert('Eroare bre!! occured while inserting your data');
   </script>
   <?php
  }
@@ -55,7 +54,7 @@ if(isset($_POST['btn-save']))
 </div>
 <div id="body">
  <div id="content">
-    <form method="post" >
+    <form method="post" enctype="multipart/form-data">
     <table align="center">
     <tr>
     <td align="center"><a href="index.php">Back to main page</a></td>
@@ -70,11 +69,59 @@ if(isset($_POST['btn-save']))
     <td><button type="submit" name="btn-upload" value="Upload Image"/><strong>SUBMIT</strong></td>
     </tr> -->
     <tr>
-      <td>Select image to upload:</td>
-    </tr>
-    <tr>
-      <td><input type="file" name="poza"></td>
-    </tr>
+    	<td>
+        Select image to upload:
+    	<input type="file" name="fileToUpload" id="fileToUpload">
+<?php
+$target_dir = "/var/www/html/uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+}
+
+// // Check if file already exists | Disabled for now
+// if (file_exists($target_file)) {
+//     echo "Sorry, file already exists.";
+//     $uploadOk = 0;
+// }
+
+// Check file size
+if ($_FILES["fileToUpload"]["size"] > 5000000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+}
+
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+    echo "Only JPG, JPEG, PNG & GIF files are allowed.";
+    $uploadOk = 0;
+}
+
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}
+?>
+   		</td>
     </tr>
     <tr>
     <td><input type="text" name="continut" placeholder="Continut" required /></td>

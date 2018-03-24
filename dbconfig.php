@@ -3,10 +3,10 @@
 	$host = "localhost";
 	$user = "root";
 	$password = "bel2018";
-	$datbase = "bel";
+	$database = "bel";
 
 	//conecting with database
 	$con = mysqli_connect($host, $user, $password);
 	//select database
-	mysqli_select_db($con, $datbase);
+	mysqli_select_db($con, $database);
 ?>
