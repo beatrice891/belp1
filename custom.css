@@ -1,0 +1,72 @@
+/***************************
+        COLOR 
+ #4f6d7a
+ #2b2d42
+ #af6d7a
+***************************/
+html{
+    font-family: 'Roboto', sans-serif;
+    
+}
+/***************************
+      Navigation
+***************************/
+nav{
+    width: 100%;
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2b2d42;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size:17px;
+
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #4f6d7a;
+}
+.active {
+    background-color: #4f6d7a;
+}
+header{
+    background-color: #4f6d7a;
+    margin-top: -16px;
+    text-align: left;
+
+}
+p{
+    color:white;
+    margin-left: 15px;
+}
+p::first-letter { 
+    font-size: 200%;
+}
+input{
+    float: right;
+    margin-right: 30px;
+    margin-top: -31px;
+    width: 140px;
+    border-radius: 10px;
+    border: none;
+    padding: 4px;
+    text-align: right;
+    margin-top: -56px;
+    border: none;
+    outline: none;
+}
