@@ -34,7 +34,7 @@ include_once 'dbconfig.php';
   ?>
         <tr>
         <td><?php echo $row[1]; ?></td>
-        <td><?php echo "<img src='uploads/".$row[2]."'>" ?></td>
+        <td><?php echo $row[2]; ?></td>
         <td><?php echo $row[3]; ?></td>
         <td><?php echo $row[4]; ?></td>
         <td><?php echo $row[5]; ?></td>
