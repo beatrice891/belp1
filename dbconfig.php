@@ -2,7 +2,7 @@
 	//declare variables for connecting with data
 	$host = "localhost";
 	$user = "root";
-	$password = "";
+	$password = "bel2018";
 	$datbase = "bel";
 
 	//conecting with database
