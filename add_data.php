@@ -1,21 +1,23 @@
 <?php
 include_once 'dbconfig.php';
+$msg = "";
 if(isset($_POST['btn-save']))
 {
  // variables for input data
+ $target = "uploads/" .basename($_FILES['poza']['name']);
  $titlu = $_POST['titlu'];
- // $poza = $_POST['poza'];
+ $poza = $_FILES['poza']['name'];
  $continut = $_POST['continut'];
  $sursa = $_POST['sursa'];
  $tari = $_POST['tari'];
  $prioritate = $_POST['prioritate'];
  $data = $_POST['data'];
-
+      if(move_uploaded_file($_FILES['poza']['tmp_name'], $target)){
+        $msg = "Image uploaded with success.";
+      }else{
+         $msg = "There was a problem uploading image.";
+      }
  //mysql_query("INSERT INTO users (first, last, whenadded) VALUES ('$first', '$last', now())"; 
-
- 
- 
-
  // sql query for inserting data into database
  $sql_query = "INSERT INTO bel(titlu,poza,continut,sursa,tari,prioritate,data) VALUES('$titlu','$poza','$continut', '$sursa','$tari','$prioritate', now())";
 
@@ -58,7 +60,7 @@ if(isset($_POST['btn-save']))
 </div>
 <div id="body">
  <div id="content">
-    <form method="post">
+    <form method="post" action="index.php" enctype="multipart/form-data">
     <table align="center">
     <tr>
     <td align="center"><a href="index.php">Back to main page</a></td>
@@ -67,10 +69,11 @@ if(isset($_POST['btn-save']))
     <td><input type="text" name="titlu" placeholder="Titlu" required /></td>
     </tr>
     <tr>
-    <td><input type="file" name="btn-upload"/></td>
+      <td>Select image to upload:</td>
     </tr>
     <tr>
-    <td><button type="submit" name="btn-upload" value="Upload Image"/><strong>SUBMIT</strong></td>
+      <td><input type="file" name="poza"></td>
+    </tr>
     </tr>
     <tr>
     <td><input type="text" name="continut" placeholder="Continut" required /></td>
