@@ -42,7 +42,7 @@ include_once 'dbconfig.php';
         <!-- <input type="submit" value="Search" /> -->
     </form>
 
-    <!-- <table align="center">
+<table align="center">
     <tr>
     <th colspan="7"><a href="add_data.php">Add data here.</a></th>
     </tr>
@@ -73,7 +73,7 @@ include_once 'dbconfig.php';
         <?php
  }
  ?>
-    </table> -->
+    </table>
     </div>
 </div>
 
